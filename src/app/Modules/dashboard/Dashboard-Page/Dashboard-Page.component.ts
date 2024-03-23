@@ -61,8 +61,8 @@ export class DashboardPageComponent implements OnInit {
         '0.5s ease-in-out'
       );
     } else {
-      this._Renderer.setStyle(this.financial.nativeElement, 'opacity', 0.3);
-      this._Renderer.setStyle(this.numOfUsers.nativeElement, 'opacity', 0.3);
+      this._Renderer.setStyle(this.financial.nativeElement, 'opacity', 0.2);
+      this._Renderer.setStyle(this.numOfUsers.nativeElement, 'opacity', 0.2);
       this._Renderer.setStyle(
         this.financial.nativeElement,
         'transition',

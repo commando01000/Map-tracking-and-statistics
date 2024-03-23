@@ -6,18 +6,23 @@ import { User } from 'src/app/interfaces/Users';
 
 function createNewUser(id: number): User {
   const name =
-    UsersComponent.NAMES[Math.round(Math.random() * (UsersComponent.NAMES.length - 1))] +
+    UsersComponent.NAMES[
+      Math.round(Math.random() * (UsersComponent.NAMES.length - 1))
+    ] +
     ' ' +
-    UsersComponent.NAMES[Math.round(Math.random() * (UsersComponent.NAMES.length - 1))].charAt(
-      0
-    ) +
+    UsersComponent.NAMES[
+      Math.round(Math.random() * (UsersComponent.NAMES.length - 1))
+    ].charAt(0) +
     '.';
 
   return {
     id: id.toString(),
     name,
     progress: Math.round(Math.random() * 100).toString(),
-    fruit: UsersComponent.FRUITS[Math.round(Math.random() * (UsersComponent.FRUITS.length - 1))],
+    fruit:
+      UsersComponent.FRUITS[
+        Math.round(Math.random() * (UsersComponent.FRUITS.length - 1))
+      ],
   };
 }
 
@@ -86,4 +91,3 @@ export class UsersComponent implements OnInit, AfterViewInit {
     }
   }
 }
-
