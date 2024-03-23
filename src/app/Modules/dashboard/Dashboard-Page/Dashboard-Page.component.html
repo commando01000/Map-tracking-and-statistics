@@ -5,7 +5,43 @@
       <div class="col-md-2 ms-5 mt-3 bg-light rounded-2">
         <app-SideNavbar></app-SideNavbar>
       </div>
-      <div class="col-md-9 ms-5 bg-light rounded-2 mt-3">Hello From Dashboard</div>
+      <div class="col-md-9 ms-5 rounded-2 mt-3">
+        <div class="row bg-light">
+          <div class="col-md-12">
+            <h2>Location Map</h2>
+            <div id="map">
+              <img src="../../assets/map.png" class="w-100" alt="Map">
+            </div>
+          </div>
+        </div>
+        <div class="row bg-light mt-5">
+          <div class="col-md-12">
+            <h2>Tracking Map</h2>
+            <div id="map">
+              <img src="../../assets/track.png" class="w-100" alt="Tracking Map">
+            </div>
+          </div>
+        </div>
+        <div class="row bg-light rounded-5 p-3 mt-5">
+          <div class="col-md-12">
+            <h2>Financial</h2>
+            <div id="chart">
+              <apx-chart
+                [series]="chartOptions.series"
+                [chart]="chartOptions.chart"
+                [dataLabels]="chartOptions.dataLabels"
+                [plotOptions]="chartOptions.plotOptions"
+                [yaxis]="chartOptions.yaxis"
+                [legend]="chartOptions.legend"
+                [fill]="chartOptions.fill"
+                [stroke]="chartOptions.stroke"
+                [tooltip]="chartOptions.tooltip"
+                [xaxis]="chartOptions.xaxis"
+              ></apx-chart>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </section>

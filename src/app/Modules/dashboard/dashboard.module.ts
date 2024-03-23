@@ -6,6 +6,7 @@ import { DashboardPageComponent } from './Dashboard-Page/Dashboard-Page.componen
 import { SideNavbarComponent } from './SideNavbar/SideNavbar.component';
 import { NavbarComponent } from './Navbar/Navbar.component';
 import { UsersComponent } from './Users/Users.component';
+import { NgApexchartsModule } from "ng-apexcharts";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,6 @@ import { UsersComponent } from './Users/Users.component';
     NavbarComponent,
     UsersComponent,
   ],
-  imports: [CommonModule, DashboardRoutingModule],
+  imports: [CommonModule, DashboardRoutingModule, NgApexchartsModule],
 })
 export class DashboardModule {}
