@@ -1,8 +1,8 @@
 <app-Navbar></app-Navbar>
 <section id="dashboard" class="dashboard min-vh-100">
   <main class="container-fluid">
-    <div class="row m-auto">
-      <div class="col-md-2 ms-5 mt-3 bg-light rounded-2">
+    <div class="row justify-content-center m-auto">
+      <div class="col-md-12 col-sm-12 col-lg-12 col-xl-2 ms-5 mt-3 bg-light rounded-2">
         <app-SideNavbar></app-SideNavbar>
       </div>
       <div class="col-md-9 ms-5 rounded-2 mt-3">
@@ -10,7 +10,7 @@
           <div class="col-md-12">
             <h2>Location Map</h2>
             <div id="map">
-              <img src="../../assets/map.png" class="w-100" alt="Map">
+              <img src="../../assets/map.png" class="w-100" alt="Map" />
             </div>
           </div>
         </div>
@@ -18,7 +18,11 @@
           <div class="col-md-12">
             <h2>Tracking Map</h2>
             <div id="map">
-              <img src="../../assets/track.png" class="w-100" alt="Tracking Map">
+              <img
+                src="../../assets/track.png"
+                class="w-100"
+                alt="Tracking Map"
+              />
             </div>
           </div>
         </div>
@@ -46,7 +50,8 @@
             <h2>Number of Users</h2>
             <div id="area-chart">
               <apx-chart
-                [series]="areaChartOptions.series"  [chart]="areaChartOptions.chart"
+                [series]="areaChartOptions.series"
+                [chart]="areaChartOptions.chart"
                 [dataLabels]="areaChartOptions.dataLabels"
                 [plotOptions]="areaChartOptions.plotOptions"
                 [yaxis]="areaChartOptions.yaxis"
