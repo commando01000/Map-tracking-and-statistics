@@ -9,7 +9,6 @@ import {
 import {
   ApexAxisChartSeries,
   ApexChart,
-  ChartComponent,
   ApexDataLabels,
   ApexPlotOptions,
   ApexYAxis,
@@ -21,16 +20,16 @@ import {
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  plotOptions: ApexPlotOptions;
-  yaxis: ApexYAxis;
-  xaxis: ApexXAxis;
-  fill: ApexFill;
-  tooltip: ApexTooltip;
-  stroke: ApexStroke;
-  legend: ApexLegend;
+  series?: ApexAxisChartSeries | any;
+  chart: ApexChart | any;
+  dataLabels: ApexDataLabels | any;
+  plotOptions: ApexPlotOptions | any;
+  yaxis: ApexYAxis | any;
+  xaxis: ApexXAxis | any;
+  fill: ApexFill | any;
+  tooltip: ApexTooltip | any;
+  stroke: ApexStroke | any;
+  legend: ApexLegend | any;
 };
 
 @Component({
@@ -40,11 +39,9 @@ export type ChartOptions = {
 })
 export class DashboardPageComponent implements OnInit {
   ngOnInit(): void {}
-  @ViewChild('chart') chart?: ChartComponent;
-  public chartOptions!: Partial<ChartOptions>;
+  public chartOptions: Partial<ChartOptions>;
 
-  @ViewChild('areaChart') areaChart?: ChartComponent; // ViewChild for area chart
-  public areaChartOptions!: Partial<ChartOptions>; // Separate options for area chart
+  public areaChartOptions: Partial<ChartOptions>; // Separate options for area chart
 
   @ViewChild('Financial') financial!: ElementRef;
   @ViewChild('numOfUsers') numOfUsers!: ElementRef;
