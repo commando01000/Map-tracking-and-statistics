@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { User } from 'src/app/interfaces/Users';
+import { User } from 'src/app/Interfaces/Users';
 
 function createNewUser(id: number): User {
   const name =
