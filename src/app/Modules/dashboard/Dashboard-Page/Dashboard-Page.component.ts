@@ -79,8 +79,6 @@ export class DashboardPageComponent implements OnInit {
     }
   }
   constructor(private _Renderer: Renderer2) {
-    this.chartOptions = {};
-    this.areaChartOptions = {};
     this.chartOptions = {
       series: [
         {
