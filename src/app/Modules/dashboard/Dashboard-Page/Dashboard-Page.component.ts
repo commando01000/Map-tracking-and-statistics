@@ -20,7 +20,7 @@ import {
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
-  series?: ApexAxisChartSeries | any;
+  series: ApexAxisChartSeries | any;
   chart: ApexChart | any;
   dataLabels: ApexDataLabels | any;
   plotOptions: ApexPlotOptions | any;
