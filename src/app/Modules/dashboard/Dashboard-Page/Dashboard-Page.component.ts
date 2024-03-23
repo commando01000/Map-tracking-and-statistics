@@ -47,7 +47,7 @@ export class DashboardPageComponent implements OnInit {
   @ViewChild('numOfUsers') numOfUsers!: ElementRef;
   @HostListener('window:scroll')
   onWindowScroll() {
-    if (scrollY > this.financial.nativeElement.offsetTop - 500) {
+    if (scrollY > this.financial.nativeElement.offsetTop - 350) {
       this._Renderer.setStyle(this.financial.nativeElement, 'opacity', 1);
       this._Renderer.setStyle(this.numOfUsers.nativeElement, 'opacity', 1);
       this._Renderer.setStyle(
