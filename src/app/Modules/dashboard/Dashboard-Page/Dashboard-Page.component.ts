@@ -1,4 +1,11 @@
-import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  OnInit,
+  Renderer2,
+  ViewChild,
+} from '@angular/core';
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -34,10 +41,10 @@ export type ChartOptions = {
 export class DashboardPageComponent implements OnInit {
   ngOnInit(): void {}
   @ViewChild('chart') chart?: ChartComponent;
-  public chartOptions: Partial<ChartOptions>;
+  public chartOptions: Partial<ChartOptions> = {};
 
   @ViewChild('areaChart') areaChart?: ChartComponent; // ViewChild for area chart
-  public areaChartOptions: Partial<ChartOptions>; // Separate options for area chart
+  public areaChartOptions: Partial<ChartOptions> = {}; // Separate options for area chart
 
   @ViewChild('Financial') financial!: ElementRef;
   @ViewChild('numOfUsers') numOfUsers!: ElementRef;
@@ -46,15 +53,29 @@ export class DashboardPageComponent implements OnInit {
     if (scrollY > this.financial.nativeElement.offsetTop - 500) {
       this._Renderer.setStyle(this.financial.nativeElement, 'opacity', 1);
       this._Renderer.setStyle(this.numOfUsers.nativeElement, 'opacity', 1);
-      this._Renderer.setStyle(this.financial.nativeElement, 'transition', "0.5s ease-in-out");
-      this._Renderer.setStyle(this.numOfUsers.nativeElement, 'transition', "0.5s ease-in-out");
-    }
-    else
-    {
+      this._Renderer.setStyle(
+        this.financial.nativeElement,
+        'transition',
+        '0.5s ease-in-out'
+      );
+      this._Renderer.setStyle(
+        this.numOfUsers.nativeElement,
+        'transition',
+        '0.5s ease-in-out'
+      );
+    } else {
       this._Renderer.setStyle(this.financial.nativeElement, 'opacity', 0.3);
       this._Renderer.setStyle(this.numOfUsers.nativeElement, 'opacity', 0.3);
-      this._Renderer.setStyle(this.financial.nativeElement, 'transition', "0.5s ease-in-out");
-      this._Renderer.setStyle(this.numOfUsers.nativeElement, 'transition', "0.5s ease-in-out");
+      this._Renderer.setStyle(
+        this.financial.nativeElement,
+        'transition',
+        '0.5s ease-in-out'
+      );
+      this._Renderer.setStyle(
+        this.numOfUsers.nativeElement,
+        'transition',
+        '0.5s ease-in-out'
+      );
     }
   }
   constructor(private _Renderer: Renderer2) {
@@ -161,7 +182,20 @@ export class DashboardPageComponent implements OnInit {
         },
       },
       xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], // Adjust if there are more months
+        categories: [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ], // Adjust if there are more months
       },
       yaxis: {
         title: {
