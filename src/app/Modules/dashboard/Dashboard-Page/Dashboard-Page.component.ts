@@ -41,10 +41,10 @@ export type ChartOptions = {
 export class DashboardPageComponent implements OnInit {
   ngOnInit(): void {}
   @ViewChild('chart') chart?: ChartComponent;
-  public chartOptions: Partial<ChartOptions> = {};
+  public chartOptions!: Partial<ChartOptions>;
 
   @ViewChild('areaChart') areaChart?: ChartComponent; // ViewChild for area chart
-  public areaChartOptions: Partial<ChartOptions> = {}; // Separate options for area chart
+  public areaChartOptions!: Partial<ChartOptions>; // Separate options for area chart
 
   @ViewChild('Financial') financial!: ElementRef;
   @ViewChild('numOfUsers') numOfUsers!: ElementRef;
@@ -79,6 +79,8 @@ export class DashboardPageComponent implements OnInit {
     }
   }
   constructor(private _Renderer: Renderer2) {
+    this.chartOptions = {};
+    this.areaChartOptions = {};
     this.chartOptions = {
       series: [
         {
