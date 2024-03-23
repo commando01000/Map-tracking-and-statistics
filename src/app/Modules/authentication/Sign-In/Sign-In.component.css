@@ -1,0 +1,41 @@
+.text {
+  color: #136456;
+  font-size: 60px;
+}
+
+.shaped-container {
+  position: relative;
+}
+
+.shaped-text {
+  background-color: #efb43880;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+  display: inline-block;
+  width: 500px;
+  height: 120px;
+  font-size: 60px;
+  line-height: 120px;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  right: 150px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #d5e9fb;
+  clip-path: circle(50% at 50% 50%);
+}
+.email {
+  color: #35363a;
+  font-size: 18px;
+}
+
+.password {
+  color: #35363a;
+  font-size: 18px;
+}
+.login-btn {
+  width: 200px;
+}
