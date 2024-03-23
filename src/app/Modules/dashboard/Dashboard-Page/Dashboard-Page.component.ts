@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewChild } from '@angular/core';
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -32,10 +32,32 @@ export type ChartOptions = {
   styleUrls: ['./Dashboard-Page.component.css'],
 })
 export class DashboardPageComponent implements OnInit {
+  ngOnInit(): void {}
   @ViewChild('chart') chart?: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
 
-  constructor() {
+  @ViewChild('areaChart') areaChart?: ChartComponent; // ViewChild for area chart
+  public areaChartOptions: Partial<ChartOptions>; // Separate options for area chart
+
+  @ViewChild('Financial') financial!: ElementRef;
+  @ViewChild('numOfUsers') numOfUsers!: ElementRef;
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    if (scrollY > 1200) {
+      this._Renderer.setStyle(this.financial.nativeElement, 'opacity', 1);
+      this._Renderer.setStyle(this.numOfUsers.nativeElement, 'opacity', 1);
+      this._Renderer.setStyle(this.financial.nativeElement, 'transition', "0.5s ease-in-out");
+      this._Renderer.setStyle(this.numOfUsers.nativeElement, 'transition', "0.5s ease-in-out");
+    }
+    else
+    {
+      this._Renderer.setStyle(this.financial.nativeElement, 'opacity', 0.3);
+      this._Renderer.setStyle(this.numOfUsers.nativeElement, 'opacity', 0.3);
+      this._Renderer.setStyle(this.financial.nativeElement, 'transition', "0.5s ease-in-out");
+      this._Renderer.setStyle(this.numOfUsers.nativeElement, 'transition', "0.5s ease-in-out");
+    }
+  }
+  constructor(private _Renderer: Renderer2) {
     this.chartOptions = {
       series: [
         {
@@ -65,7 +87,9 @@ export class DashboardPageComponent implements OnInit {
       plotOptions: {
         bar: {
           horizontal: false,
-          columnWidth: '55%',
+          columnWidth: '40%',
+          // Set rounded corners with radius property
+          borderRadius: 8, // Adjust the radius value for desired roundness
         },
       },
       dataLabels: {
@@ -115,7 +139,41 @@ export class DashboardPageComponent implements OnInit {
         position: 'bottom',
       },
     };
-  }
 
-  ngOnInit() {}
+    // Define options for the area chart
+    this.areaChartOptions = {
+      series: [
+        {
+          name: 'Number of Users', // Matches the image
+          data: [180, 250, 150, 180, 220, 170, 180, 160, 190, 250, 260, 250], // Placeholder data, update with actual values
+          color: '#ffc107',
+        },
+      ],
+      chart: {
+        type: 'area',
+        height: 350,
+      },
+      plotOptions: {},
+      dataLabels: {
+        enabled: true, // Enable data labels
+        formatter: function (val: number, opts: any) {
+          return val + ''; // Remove '%' if there are no percentages
+        },
+      },
+      xaxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], // Adjust if there are more months
+      },
+      yaxis: {
+        title: {
+          text: 'Number of Users', // Matches the image
+        },
+        labels: {
+          formatter: function (val: number) {
+            return val.toFixed(0); // Assuming no decimals in the image
+          },
+        },
+      },
+      // ... other options
+    };
+  }
 }
