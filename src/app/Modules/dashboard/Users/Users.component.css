@@ -1,3 +1,9 @@
 #users{
     background-color: #EFF3F8;
 }
+
+i:hover {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.2s ease-in-out;
+}

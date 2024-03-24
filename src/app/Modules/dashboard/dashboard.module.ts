@@ -12,13 +12,17 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import { DialogAnimationsExampleDialog } from './Users/dialog-animation-example-dialog';
 @NgModule({
   declarations: [
     DashboardPageComponent,
     SideNavbarComponent,
     NavbarComponent,
     UsersComponent,
-
+    DialogAnimationsExampleDialog,
   ],
   imports: [
     CommonModule,
@@ -29,6 +33,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
 })
 export class DashboardModule {}

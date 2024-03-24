@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { User } from 'src/app/Interfaces/Users';
+import { DialogAnimationsExampleDialog } from './dialog-animation-example-dialog';
 
 function createNewUser(id: number): User {
   const name =
@@ -15,14 +17,20 @@ function createNewUser(id: number): User {
     ].charAt(0) +
     '.';
 
+  // return {
+  //   id: id.toString(),
+  //   name,
+  //   //progress: Math.round(Math.random() * 100).toString(),
+  //   // fruit:
+  //   //   UsersComponent.FRUITS[
+  //   //     Math.round(Math.random() * (UsersComponent.FRUITS.length - 1))
+  //   //   ],
+  // };
   return {
     id: id.toString(),
     name,
-    progress: Math.round(Math.random() * 100).toString(),
-    fruit:
-      UsersComponent.FRUITS[
-        Math.round(Math.random() * (UsersComponent.FRUITS.length - 1))
-      ],
+    email: '2QXeO@example.com',
+    photo: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
   };
 }
 
@@ -32,22 +40,13 @@ function createNewUser(id: number): User {
   styleUrls: ['./Users.component.css'],
 })
 export class UsersComponent implements OnInit, AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit'];
+  displayedColumns: string[] = ['id', 'photo', 'name', 'email', 'actions'];
+
   dataSource!: MatTableDataSource<User>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  static FRUITS: string[] = [
-    'blueberry',
-    'lychee',
-    'kiwi',
-    'mango',
-    'peach',
-    'lime',
-    'pomegranate',
-    'pineapple',
-  ];
   static NAMES: string[] = [
     'Maia',
     'Asher',
@@ -70,7 +69,31 @@ export class UsersComponent implements OnInit, AfterViewInit {
     'Elizabeth',
   ];
 
-  constructor() {
+  viewUser(user: User) {
+    // Code to view the user
+  }
+
+  editUser(user: User) {
+    // Code to edit the user
+  }
+
+  deleteUser(user: User) {
+    // Code to delete the user
+  }
+
+  openDialog(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.dialog.open(DialogAnimationsExampleDialog, {
+      width: '800px',
+      height: '350px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+  }
+
+  constructor(private dialog: MatDialog) {
     const users = Array.from({ length: 100 }, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render

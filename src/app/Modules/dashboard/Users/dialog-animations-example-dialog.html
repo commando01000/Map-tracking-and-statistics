@@ -1,0 +1,83 @@
+<!-- <h1 mat-dialog-title>Delete file</h1>
+<div mat-dialog-content>
+  Would you like to delete cat.jpeg?
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
+</div> -->
+<h1 mat-dialog-title>Add New User</h1>
+<div
+  id="add-user-dialog"
+  class="d-flex justify-content-between gap-5"
+  mat-dialog-content
+>
+  <div>
+    <mat-form-field class="w-100">
+      <div class="mb-3">
+        <input
+          type="text"
+          matInput
+          name="name"
+          id="name"
+          class="w-100"
+          aria-describedby="helpId"
+          placeholder="Fullname"
+        />
+      </div>
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <div class="mb-3">
+        <input
+          type="text"
+          matInput
+          name="username"
+          id="username"
+          class="w-100"
+          aria-describedby="helpId"
+          placeholder="Username"
+        />
+      </div>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="w-100">
+      <div class="mb-3">
+        <input
+          type="email"
+          matInput
+          name="email"
+          id="email"
+          class="w-100"
+          placeholder="Email"
+        />
+      </div>
+    </mat-form-field>
+    <mat-form-field class="w-100">
+      <mat-label>Enter your password</mat-label>
+      <div class="mb-3">
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          name="password"
+          id="password"
+          class="w-100"
+          placeholder="Password"
+        />
+      </div>
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Create User</button>
+</div>
