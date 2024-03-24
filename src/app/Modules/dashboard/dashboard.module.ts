@@ -13,9 +13,17 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
-import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
+import {
+  MatDialog,
+  MatDialogRef,
+  MatDialogModule,
+} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { DialogAnimationsExampleDialog } from './Users/dialog-animation-example-dialog';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     DashboardPageComponent,
@@ -36,6 +44,9 @@ import { DialogAnimationsExampleDialog } from './Users/dialog-animation-example-
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
+    InputTextModule,
+    PasswordModule,
+    FormsModule,
   ],
 })
 export class DashboardModule {}

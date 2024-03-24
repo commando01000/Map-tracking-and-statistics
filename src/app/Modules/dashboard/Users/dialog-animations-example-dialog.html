@@ -1,11 +1,3 @@
-<!-- <h1 mat-dialog-title>Delete file</h1>
-<div mat-dialog-content>
-  Would you like to delete cat.jpeg?
-</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
-</div> -->
 <h1 mat-dialog-title>Add New User</h1>
 <div
   id="add-user-dialog"
@@ -29,6 +21,20 @@
     <mat-form-field class="w-100">
       <div class="mb-3">
         <input
+          type="email"
+          matInput
+          name="email"
+          id="email"
+          class="w-100"
+          placeholder="Email"
+        />
+      </div>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="w-100">
+      <div class="mb-3">
+        <input
           type="text"
           matInput
           name="username"
@@ -39,32 +45,12 @@
         />
       </div>
     </mat-form-field>
-  </div>
-  <div>
     <mat-form-field class="w-100">
       <div class="mb-3">
-        <input
-          type="email"
-          matInput
-          name="email"
-          id="email"
-          class="w-100"
-          placeholder="Email"
-        />
+        <input matInput [type]="hide ? 'password' : 'text'" />
       </div>
-    </mat-form-field>
-    <mat-form-field class="w-100">
       <mat-label>Enter your password</mat-label>
-      <div class="mb-3">
-        <input
-          matInput
-          [type]="hide ? 'password' : 'text'"
-          name="password"
-          id="password"
-          class="w-100"
-          placeholder="Password"
-        />
-      </div>
+      
       <button
         mat-icon-button
         matSuffix
@@ -79,5 +65,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Create User</button>
+  <button cdkFocusInitial class="btn btn-dark">Add User</button>
 </div>

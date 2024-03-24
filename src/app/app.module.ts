@@ -18,6 +18,7 @@ import { AuthenticationModule } from './Modules/authentication/authentication.mo
     BrowserAnimationsModule,
     DashboardModule,
     AuthenticationModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     // {
