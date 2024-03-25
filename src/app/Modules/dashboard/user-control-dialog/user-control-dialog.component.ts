@@ -26,7 +26,6 @@ export class UserControlDialogComponent {
 
         this.selectedImage.nativeElement.src = e.target.result;
       };
-
       reader.readAsDataURL(fileInput.files[0]);
     }
   }
