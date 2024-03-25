@@ -4,7 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { User } from 'src/app/Interfaces/Users';
-import { DialogAnimationsExampleDialog } from './dialog-animation-example-dialog';
+import { UserControlDialogComponent } from '../user-control-dialog/user-control-dialog.component';
 
 function createNewUser(id: number): User {
   const name =
@@ -85,9 +85,9 @@ export class UsersComponent implements OnInit, AfterViewInit {
     enterAnimationDuration: string,
     exitAnimationDuration: string
   ): void {
-    this.dialog.open(DialogAnimationsExampleDialog, {
+    this.dialog.open(UserControlDialogComponent, {
       width: '800px',
-      height: '350px',
+      height: '500px',
       enterAnimationDuration,
       exitAnimationDuration,
     });

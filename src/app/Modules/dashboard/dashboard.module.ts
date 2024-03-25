@@ -19,10 +19,10 @@ import {
   MatDialogModule,
 } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { DialogAnimationsExampleDialog } from './Users/dialog-animation-example-dialog';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { FormsModule } from '@angular/forms';
+import { UserControlDialogComponent } from './user-control-dialog/user-control-dialog.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { FormsModule } from '@angular/forms';
     SideNavbarComponent,
     NavbarComponent,
     UsersComponent,
-    DialogAnimationsExampleDialog,
+    UserControlDialogComponent,
   ],
   imports: [
     CommonModule,
