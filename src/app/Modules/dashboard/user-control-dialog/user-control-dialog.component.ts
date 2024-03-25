@@ -12,17 +12,18 @@ export class UserControlDialogComponent {
 
   ngOnInit(): void {}
 
-  @ViewChild('selectedImage', { static: false }) selectedImage!: ElementRef<HTMLImageElement>;
+  @ViewChild('selectedImage', { static: false })
+  selectedImage!: ElementRef<HTMLImageElement>;
 
-  displaySelectedImage(event:any) {
+  displaySelectedImage(event: any) {
     const fileInput = event.target;
-    
+
     if (fileInput.files && fileInput.files[0]) {
       const reader = new FileReader();
 
       reader.onload = (e: any) => {
         console.log(e.target.result);
-        
+
         this.selectedImage.nativeElement.src = e.target.result;
       };
 
