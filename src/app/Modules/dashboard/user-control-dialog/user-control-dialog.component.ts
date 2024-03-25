@@ -22,7 +22,7 @@ export class UserControlDialogComponent {
       const reader = new FileReader();
 
       reader.onload = (e: any) => {
-        console.log(e.target.result);
+        // console.log(e.target.result);
 
         this.selectedImage.nativeElement.src = e.target.result;
       };
