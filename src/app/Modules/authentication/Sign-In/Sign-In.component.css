@@ -1,6 +1,6 @@
 .text {
   color: #136456;
-  font-size: 60px;
+  font-size: clamp(60px, 20vw, 5.6rem);
 }
 
 .shaped-container {
@@ -13,8 +13,8 @@
   display: inline-block;
   width: 500px;
   height: 120px;
-  font-size: 60px;
   line-height: 120px;
+  font-size: clamp(60px, 20vw, 5.6rem);
 }
 
 .circle {
@@ -38,4 +38,29 @@
 }
 .login-btn {
   width: 200px;
+}
+
+@media screen and (max-width: 810px) {
+  .shaped-text {
+    background-color: #efb43880;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+    height: 50px;
+    line-height: 10px;
+    font-size: clamp(20px, 20vw, 5.6rem);
+  }
+  span {
+    font-size: 20px;
+  }
+  .text {
+    font-size: 20px;
+  }
+
+  .circle {
+    right: 50px; /* Position the circle closer to the edge */
+    width: 20px; /* Reduce the size of the circle */
+    height: 20px; /* Reduce the size of the circle */
+  }
 }
