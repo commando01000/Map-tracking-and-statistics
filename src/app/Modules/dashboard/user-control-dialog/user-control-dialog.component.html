@@ -1,99 +1,112 @@
-<h1 mat-dialog-title>Add User</h1>
-<!--Avatar-->
-<div class="d-flex flex-row gap-3 align-items-center">
-  <div class="ms-3">
-    <label for="customFile2">
-      <img
-        #selectedImage
-        id="selectedAvatar"
-        src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
-        class="rounded-circle"
-        style="width: 100px; height: 100px; object-fit: cover; cursor: pointer"
-        alt="example placeholder"
-      />
-      <input
-        type="file"
-        class="form-control d-none"
-        id="customFile2"
-        (change)="displaySelectedImage($event)"
-      />
-    </label>
-  </div>
-  <div>
-    <button class="btn btn-outline-dark rounded-5 d-flex align-items-center">
-      <span class="material-symbols-outlined fs-3 me-2"
-        >add_photo_alternate</span
-      >
-      <label class="form-label label m-1" for="customFile2">Choose file</label>
-    </button>
-  </div>
-</div>
+<section id="add-user-dialog">
+  <main class="container-fluid">
+    <h1 mat-dialog-title>Add User</h1>
+    <!--Avatar-->
+    <div class="d-flex flex-row gap-3 align-items-center">
+      <div class="ms-3">
+        <label for="customFile2">
+          <img
+            #selectedImage
+            id="selectedAvatar"
+            src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
+            class="rounded-circle"
+            style="
+              width: 100px;
+              height: 100px;
+              object-fit: cover;
+              cursor: pointer;
+            "
+            alt="example placeholder"
+          />
+          <input
+            type="file"
+            class="form-control d-none"
+            id="customFile2"
+            (change)="displaySelectedImage($event)"
+          />
+        </label>
+      </div>
+      <div>
+        <button
+          class="btn btn-outline-dark rounded-5 d-flex align-items-center"
+        >
+          <span class="material-symbols-outlined fs-3 me-2"
+            >add_photo_alternate</span
+          >
+          <label class="form-label label m-1" for="customFile2"
+            >Choose file</label
+          >
+        </button>
+      </div>
+    </div>
 
-<div
-  id="add-user-dialog"
-  class="d-flex justify-content-between gap-5"
-  mat-dialog-content
->
-  <div>
-    <mat-form-field class="w-100">
-      <div class="mb-3">
-        <input
-          type="text"
-          matInput
-          name="name"
-          id="name"
-          class="w-100"
-          aria-describedby="helpId"
-          placeholder="Fullname"
-        />
+    <div
+      id="add-user-dialog"
+      class="d-flex justify-content-between gap-5"
+      mat-dialog-content
+    >
+      <div>
+        <mat-form-field class="w-100">
+          <div class="mb-3">
+            <input
+              type="text"
+              matInput
+              name="name"
+              id="name"
+              class="w-100"
+              aria-describedby="helpId"
+              placeholder="Fullname"
+            />
+          </div>
+        </mat-form-field>
+        <mat-form-field class="w-100">
+          <div class="mb-3">
+            <input
+              type="email"
+              matInput
+              name="email"
+              id="email"
+              class="w-100"
+              placeholder="Email"
+            />
+          </div>
+        </mat-form-field>
       </div>
-    </mat-form-field>
-    <mat-form-field class="w-100">
-      <div class="mb-3">
-        <input
-          type="email"
-          matInput
-          name="email"
-          id="email"
-          class="w-100"
-          placeholder="Email"
-        />
-      </div>
-    </mat-form-field>
-  </div>
-  <div>
-    <mat-form-field class="w-100">
-      <div class="mb-3">
-        <input
-          type="text"
-          matInput
-          name="username"
-          id="username"
-          class="w-100"
-          aria-describedby="helpId"
-          placeholder="Username"
-        />
-      </div>
-    </mat-form-field>
-    <mat-form-field class="w-100">
-      <div class="mb-3">
-        <input matInput [type]="hide ? 'password' : 'text'" />
-      </div>
-      <mat-label>Enter your password</mat-label>
+      <div>
+        <mat-form-field class="w-100">
+          <div class="mb-3">
+            <input
+              type="text"
+              matInput
+              name="username"
+              id="username"
+              class="w-100"
+              aria-describedby="helpId"
+              placeholder="Username"
+            />
+          </div>
+        </mat-form-field>
+        <mat-form-field class="w-100">
+          <div class="mb-3">
+            <input matInput [type]="hide ? 'password' : 'text'" />
+          </div>
+          <mat-label>Enter your password</mat-label>
 
-      <button
-        mat-icon-button
-        matSuffix
-        (click)="hide = !hide"
-        [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide"
-      >
-        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
-      </button>
-    </mat-form-field>
-  </div>
-</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button cdkFocusInitial class="btn btn-dark">Add User</button>
-</div>
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button cdkFocusInitial class="btn btn-dark">Add User</button>
+    </div>
+  </main>
+</section>

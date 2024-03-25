@@ -1,16 +1,16 @@
-<app-Navbar></app-Navbar>
+<app-Navbar></app-Navbar> <!-- Renders the Navbar component -->
 <section id="dashboard" class="dashboard min-vh-100">
   <main class="container-fluid">
     <div class="row justify-content-center gx-5">
       <div class="col-sm-12 col-md-12 col-lg-12 col-xl-2 mt-3 bg-light rounded-2">
-        <app-SideNavbar></app-SideNavbar>
+        <app-SideNavbar></app-SideNavbar> <!-- Renders the SideNavbar component -->
       </div>
       <div class="col-md-12 col-xxl-9 col-xl-9 col-lg-12 rounded-2 mt-3">
         <div class="row bg-light">
           <div class="col-md-12">
             <h2>Location Map</h2>
             <div id="map">
-              <img src="../../assets/map.png" class="w-100" alt="Map" />
+              <img src="../../assets/map.png" class="w-100" alt="Map" /> <!-- Renders the map image -->
             </div>
           </div>
         </div>
@@ -21,8 +21,7 @@
               <img
                 src="../../assets/track.png"
                 class="w-100"
-                alt="Tracking Map"
-              />
+                alt="Tracking Map" /> <!-- Renders the tracking map image -->
             </div>
           </div>
         </div>
@@ -41,7 +40,7 @@
                 [stroke]="chartOptions.stroke"
                 [tooltip]="chartOptions.tooltip"
                 [xaxis]="chartOptions.xaxis"
-              ></apx-chart>
+              ></apx-chart> <!-- Renders the financial chart using ApexCharts -->
             </div>
           </div>
         </div>
@@ -60,7 +59,7 @@
                 [stroke]="areaChartOptions.stroke"
                 [tooltip]="areaChartOptions.tooltip"
                 [xaxis]="areaChartOptions.xaxis"
-              ></apx-chart>
+              ></apx-chart> <!-- Renders the number of users chart using ApexCharts -->
             </div>
           </div>
         </div>
