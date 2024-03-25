@@ -17,3 +17,15 @@ input.example-right-align::-webkit-inner-spin-button {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
+
+.btn-outline-dark {
+  background-color: #fff; /* sets background color to white */
+  border-color: #333; /* sets border color to dark gray */
+  color: #333; /* sets text color to dark gray */
+  transition: all 0.3s ease-in-out; /* sets a smooth transition effect */
+}
+
+.btn-outline-dark:hover {
+  background-color: #333; /* changes background color to dark gray on hover */
+  color: #fff; /* changes text color to white on hover */
+}
