@@ -4,6 +4,7 @@
   <div class="ms-3">
     <label for="customFile2">
       <img
+        #selectedImage
         id="selectedAvatar"
         src="https://mdbootstrap.com/img/Photos/Others/placeholder-avatar.jpg"
         class="rounded-circle"
@@ -14,7 +15,7 @@
         type="file"
         class="form-control d-none"
         id="customFile2"
-        onchange="displaySelectedImage(event, 'selectedAvatar')"
+        (change)="displaySelectedImage($event)"
       />
     </label>
   </div>
