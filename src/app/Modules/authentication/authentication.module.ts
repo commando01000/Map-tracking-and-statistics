@@ -12,9 +12,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HandleHeaderInterceptor } from 'src/app/Interceptors/handle-header.interceptor';
+import { AuthenticationLayoutComponent } from './authentication-layout/authentication-layout.component';
 
 @NgModule({
-  declarations: [SignInComponent, SignUpComponent],
+  declarations: [
+    SignInComponent,
+    SignUpComponent,
+    AuthenticationLayoutComponent,
+  ],
   imports: [
     CommonModule,
     AuthenticationRoutingModule,

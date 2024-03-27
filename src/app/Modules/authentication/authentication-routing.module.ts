@@ -2,22 +2,27 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SignInComponent } from './Sign-In/Sign-In.component';
 import { SignUpComponent } from './Sign-Up/Sign-Up.component';
-import { authenticationGuard } from 'src/app/Guards/authentication.guard';
+import { AuthenticationLayoutComponent } from './authentication-layout/authentication-layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    canActivate: [authenticationGuard],
-    pathMatch: 'full',
-    component: SignInComponent,
-  },
-  {
-    path: 'sign-in',
-    component: SignInComponent,
-  },
-  {
-    path: 'sign-up',
-    component: SignUpComponent,
+    component: AuthenticationLayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'sign-in',
+        pathMatch: 'full',
+      },
+      {
+        path: 'sign-in',
+        component: SignInComponent,
+      },
+      {
+        path: 'sign-up',
+        component: SignUpComponent,
+      },
+    ],
   },
 ];
 

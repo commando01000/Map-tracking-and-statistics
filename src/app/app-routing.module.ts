@@ -4,6 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'authentication',
+    pathMatch: 'full',
+  },
+  {
+    path: 'authentication',
     loadChildren: () =>
       import('./Modules/authentication/authentication.module').then(
         (m) => m.AuthenticationModule
@@ -15,7 +20,7 @@ const routes: Routes = [
       import('./Modules/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
       ),
-  }
+  },
 ];
 
 @NgModule({

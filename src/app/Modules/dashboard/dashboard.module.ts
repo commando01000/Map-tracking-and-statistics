@@ -23,6 +23,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { FormsModule } from '@angular/forms';
 import { UserControlDialogComponent } from './user-control-dialog/user-control-dialog.component';
+import { DashboardLayoutComponent } from './dashboard-layout/dashboard-layout.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { UserControlDialogComponent } from './user-control-dialog/user-control-d
     NavbarComponent,
     UsersComponent,
     UserControlDialogComponent,
+    DashboardLayoutComponent,
   ],
   imports: [
     CommonModule,
